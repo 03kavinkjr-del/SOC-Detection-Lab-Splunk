@@ -1,210 +1,149 @@
-\# Enterprise SOC Detection Lab
+# 🛡️ Enterprise SOC Detection Lab
 
+> A Security Operations Center (SOC) lab built using Splunk Enterprise, Windows Sysmon, and the Splunk Universal Forwarder to collect, analyze, and investigate Windows security events.
 
+---
 
-\## Overview
+# 📖 Overview
 
+This project demonstrates the design and implementation of an enterprise-style Security Operations Center (SOC) lab.
 
+The lab centralizes Windows telemetry into Splunk Enterprise, enabling security monitoring, detection engineering, dashboard creation, and incident investigation using real endpoint data.
 
-This project demonstrates the design and implementation of a Security Operations Center (SOC) detection lab using Splunk Enterprise, Windows Event Logs, Sysmon, and the Splunk Universal Forwarder.
+---
 
+# 🎯 Objectives
 
+- Build a centralized SIEM
+- Collect Windows Event Logs
+- Deploy Sysmon for endpoint telemetry
+- Forward logs using Splunk Universal Forwarder
+- Create custom SPL detections
+- Build SOC dashboards
+- Map detections to MITRE ATT&CK
+- Practice threat hunting
 
-The objective of this lab is to collect endpoint telemetry, centralize logs, build detection rules, create dashboards, and investigate security events using MITRE ATT\&CK–aligned detections.
+---
 
+# 🏗️ Architecture
 
-
-\---
-
-
-
-\## Lab Architecture
-
-
-
-Windows 11 Endpoint
-
-
-
-\- Sysmon
-
-\- Windows Event Logs
-
-\- Splunk Universal Forwarder
-
-
-
-↓
-
-
-
-Ubuntu Server 22.04
-
-
-
-\- Splunk Enterprise
-
-\- Search \& Reporting
-
-\- Dashboards
-
-\- Alerts
-
-\- Detection Rules
-
-
-
-\---
-
-
-
-\## Technologies Used
-
-
-
-\- Splunk Enterprise 9.4
-
-\- Ubuntu Server 22.04
-
-\- Windows 11
-
-\- Sysmon
-
-\- Splunk Universal Forwarder
-
-\- PowerShell
-
-\- SPL (Search Processing Language)
-
-\- MITRE ATT\&CK Framework
-
-
-
-\---
-
-
-
-\## Features
-
-
-
-\- Windows Event Log Collection
-
-\- Sysmon Event Collection
-
-\- Custom Splunk Searches
-
-\- Security Dashboards
-
-\- Scheduled Alerts
-
-\- Detection Engineering
-
-\- Threat Hunting
-
-\- MITRE ATT\&CK Mapping
-
-
-
-\---
-
-
-
-\## Current Detections
-
-
-
-\- Encoded PowerShell Detection (T1059.001)
-
-\- Brute Force Login Detection (T1110)
-
-\- CMD Execution Detection
-
-\- LOLBins Detection
-
-\- RDP Login Detection
-
-\- New Service Installation Detection
-
-
-
-\---
-
-
-
-\## Screenshots
-
-
-
-Screenshots are available in the `/screenshots` directory.
-
-
-
-\---
-
-
-
-\## Project Structure
-
-
-
-```text
-
-SOC-Detection-Lab-Splunk/
-
-├── architecture/
-
-├── configs/
-
-├── detections/
-
-├── docs/
-
-├── queries/
-
-├── screenshots/
-
-└── README.md
+> Architecture diagram will be added in a future update.
 
 ```
+Windows 11 Endpoint
+        │
+        ▼
+Splunk Universal Forwarder
+        │
+     TCP 9997
+        │
+        ▼
+Ubuntu Server 22.04
+Splunk Enterprise
+        │
+        ▼
+Search • Dashboards • Alerts
+```
 
+---
 
+# 💻 Lab Environment
 
-\---
+| Component | Version |
+|------------|---------|
+| Ubuntu Server | 22.04 LTS |
+| Windows | Windows 11 |
+| Splunk Enterprise | 9.4.4 |
+| Universal Forwarder | 9.4.4 |
+| Sysmon | Latest |
 
+---
 
+# 📥 Logs Collected
 
-\## Future Improvements
+- Windows Security
+- Windows System
+- Windows Application
+- Windows PowerShell
+- Sysmon Operational
 
+---
 
+# 🔍 Detection Engineering
 
-\- Active Directory Integration
+Current detections include:
 
-\- Wazuh Integration
+- Encoded PowerShell
+- Brute Force Login
+- CMD Execution
+- LOLBins
+- RDP Logins
+- New Service Installation
 
-\- Sigma Rule Conversion
+Each detection includes:
 
-\- Additional MITRE ATT\&CK Detections
+- SPL Query
+- MITRE ATT&CK Mapping
+- Investigation Guide
+- Attack Simulation
 
-\- Threat Hunting Playbooks
+---
 
-\- Automated Incident Response
+# 📊 Dashboards
 
+The SOC dashboard includes:
 
+- Security Events
+- Sysmon Events
+- Failed Logins
+- Successful Logins
+- PowerShell Activity
+- Top Event IDs
+- Top Processes
 
-\---
+---
 
+# 🛡️ MITRE ATT&CK Coverage
 
+| Detection | ATT&CK |
+|------------|---------|
+| Encoded PowerShell | T1059.001 |
+| Brute Force | T1110 |
+| CMD Execution | T1059.003 |
+| LOLBins | T1218 |
+| RDP | T1021.001 |
+| New Service | T1543 |
 
-\## Author
+---
 
+# 📁 Project Structure
 
+```text
+SOC-Detection-Lab-Splunk
+│
+├── architecture/
+├── configs/
+├── detections/
+├── docs/
+├── queries/
+└── screenshots/
+```
 
-Kavin Jr
+---
 
+# 🚀 Future Improvements
 
+- Active Directory Integration
+- Wazuh Integration
+- Sigma Rules
+- Threat Hunting Playbooks
+- Automated Incident Response
+- Additional MITRE ATT&CK Detections
 
-M.Sc Cyber Security
+---
 
+# 👨‍💻 Author
 
+**Kavin Jr**
 
+M.Sc. Cyber Security
